@@ -1,0 +1,16 @@
+[package]
+name = "cherrydoor-models"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+diesel = "2.1.0"
+serde = { version = "1.0.164", features = ["derive"] }
+
+[dev-dependencies]
+tokio = { version = "1.28.2", features = ["full"]}
+diesel-async = { version = "0.3.1", features = ["mysql"] }
+serde_json = "1.0.97"
+
