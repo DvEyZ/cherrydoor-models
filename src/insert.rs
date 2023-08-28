@@ -1,5 +1,7 @@
 use diesel::prelude::*;
 use serde::Deserialize;
+use crate::schema::AccessProfileAccessMode;
+
 use super::schema;
 
 #[derive(Insertable, PartialEq, Debug, Deserialize)]
@@ -31,7 +33,8 @@ pub struct AccessProfileInsert {
     pub name :String,
     pub description :String,
     pub display_text :String,
-    pub color :String
+    pub color :String,
+    pub access_mode :AccessProfileAccessMode
 }
 
 #[derive(Insertable, Debug, PartialEq, Deserialize)]

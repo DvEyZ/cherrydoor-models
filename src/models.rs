@@ -1,5 +1,7 @@
 use diesel::prelude::*;
 use serde::{Serialize, Deserialize};
+use crate::schema::AccessProfileAccessMode;
+
 use super::schema;
 
 #[derive(Queryable, Identifiable, Selectable, PartialEq, Debug, Serialize, Deserialize)]
@@ -35,7 +37,8 @@ pub struct AccessProfile {
     pub name :String,
     pub description :String,
     pub display_text :String,
-    pub color :String
+    pub color :String,
+    pub access_mode :AccessProfileAccessMode
 }
 
 #[derive(Queryable, Identifiable, Selectable, Associations, Debug, PartialEq)]

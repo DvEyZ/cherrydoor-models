@@ -1,4 +1,4 @@
-use std::{error::Error};
+use std::error::Error;
 
 use cherrydoor_models::{schema::{access_codes, users, permissions, access_profiles}, models::{AccessCode, User, Permission, UserPermission, AccessProfile, AccessProfilePermission}};
 use diesel::{QueryDsl, SelectableHelper, ExpressionMethods, BelongingToDsl, OptionalExtension};

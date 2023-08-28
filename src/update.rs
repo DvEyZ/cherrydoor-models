@@ -1,6 +1,8 @@
 use diesel::AsChangeset;
 use serde::Deserialize;
 
+use crate::schema::AccessProfileAccessMode;
+
 #[derive(AsChangeset, Deserialize)]
 #[diesel(table_name = super::schema::web_ui_users)]
 pub struct WebUIUserUpdate {
@@ -26,5 +28,6 @@ pub struct PermissionUpdate {
 pub struct AccessProfileUpdate {
     pub description :Option<String>,
     pub display_text :Option<String>,
-    pub color :Option<String>
+    pub color :Option<String>,
+    pub access_mode :Option<AccessProfileAccessMode>
 }

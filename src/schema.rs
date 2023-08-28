@@ -1,4 +1,14 @@
+use diesel_derive_enum::DbEnum;
 // @generated automatically by Diesel CLI.
+use serde::{Serialize, Deserialize};
+
+#[derive(PartialEq, Debug, Serialize, Deserialize, DbEnum)]
+#[DbValueStyle = "PascalCase"]
+pub enum AccessProfileAccessMode {
+    OpenLock,
+    AllowAnyone,
+    CheckAccess
+}
 
 diesel::table! {
     access_codes (id) {
@@ -10,6 +20,9 @@ diesel::table! {
 }
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use super::AccessProfileAccessModeMapping;
+
     access_profiles (id) {
         id -> Integer,
         #[max_length = 255]
@@ -20,6 +33,8 @@ diesel::table! {
         display_text -> Varchar,
         #[max_length = 255]
         color -> Varchar,
+        #[max_length = 11]
+        access_mode -> AccessProfileAccessModeMapping,
     }
 }
 
