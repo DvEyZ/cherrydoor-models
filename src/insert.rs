@@ -9,7 +9,8 @@ use super::schema;
 pub struct WebUIUserInsert {
     pub name :String,
     pub password_hash :String,
-    pub is_admin :bool
+    pub is_admin :bool,
+    pub ac_does_not_expire :bool
 }
 
 #[derive(Insertable, PartialEq, Debug, Deserialize)]

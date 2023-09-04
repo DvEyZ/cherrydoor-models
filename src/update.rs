@@ -7,7 +7,8 @@ use crate::schema::AccessProfileAccessMode;
 #[diesel(table_name = super::schema::web_ui_users)]
 pub struct WebUIUserUpdate {
     pub password_hash :Option<String>,
-    pub is_admin :Option<bool>
+    pub is_admin :Option<bool>,
+    pub ac_does_not_expire :Option<bool>
 }
 
 #[derive(AsChangeset, Deserialize)]

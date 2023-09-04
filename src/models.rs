@@ -11,6 +11,7 @@ pub struct WebUIUser {
     pub name :String,
     pub password_hash :String,
     pub is_admin :bool,
+    pub ac_does_not_expire :bool
 }
 
 #[derive(Queryable, Identifiable, Selectable, PartialEq, Debug, Serialize, Deserialize)]

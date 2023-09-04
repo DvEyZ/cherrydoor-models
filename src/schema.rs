@@ -82,6 +82,7 @@ diesel::table! {
         #[max_length = 255]
         password_hash -> Varchar,
         is_admin -> Bool,
+        ac_does_not_expire -> Bool
     }
 }
 
